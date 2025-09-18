@@ -2,8 +2,9 @@
 
 Work In Progress
 
-By humans, for humans
-All work on this website was created by humans, not by AI.
+<p style="text-align:center;">By humans, for humans.</p>
+
+All work on this repository was created by humans, not by AI.
 
 ## References
 
