@@ -1,6 +1,6 @@
 // src/App.jsx
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import DocsLayout from './components/ProcessLayout'
+import DocsLayout from './components/DocsLayout'
 
 function MainApp() {
   return (
@@ -21,14 +21,14 @@ function App() {
         <Link to="/" style={{ marginRight: '20px', textDecoration: 'none' }}>
           App
         </Link>
-        <Link to="/process" style={{ textDecoration: 'none' }}>
-          Process
+        <Link to="/docs" style={{ textDecoration: 'none' }}>
+          Docs
         </Link>
       </nav>
       
       <Routes>
         <Route path="/" element={<MainApp />} />
-        <Route path="/process" element={<DocsLayout />} />
+        <Route path="/docs" element={<DocsLayout />} />
       </Routes>
     </BrowserRouter>
   )

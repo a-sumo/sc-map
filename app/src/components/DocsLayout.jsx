@@ -1,9 +1,9 @@
-// src/components/ProcessLayout.jsx
+// src/components/DocsLayout.jsx
 import { useState } from 'react'
-import ResearchNotes from '../process/research-notes.mdx'
-import GridMap from '../process/grid-map.mdx'
+import ResearchNotes from '../docs/research-notes.mdx'
+import GridMap from '../docs/grid-map.mdx'
 
-function ProcessLayout() {
+function DocsLayout() {
   const [expandedSections, setExpandedSections] = useState({
     'overview': true,
     'map': false
@@ -141,4 +141,4 @@ function ProcessLayout() {
   )
 }
 
-export default ProcessLayout
+export default DocsLayout
