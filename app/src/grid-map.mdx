@@ -1,0 +1,51 @@
+import * as d3 from "d3";
+
+First, we define our square grid. 
+We then assign a value to each cell: sea (blue) or land (green).
+The border grid cells at the border are sea(S). Root nodes are used to define land cells(L).
+
+export function Grid0() {
+  const createGrid = (svg) => {
+    const width = 200
+    const height = 200
+    const gridSize = 50
+    const rows = Math.floor(height / gridSize)
+    const cols = Math.floor(width / gridSize)
+    
+    // Create grid data
+    const gridData = []
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const isBorder = row === 0 || row === rows-1 || col === 0 || col === cols-1
+        gridData.push({
+          x: col * gridSize,
+          y: row * gridSize,
+          type: isBorder ? 'sea' : 'land',
+          row,
+          col
+        })
+      }
+    }
+    
+    d3.select(svg)
+      .attr("width", width)
+      .attr("height", height)
+    
+    // Create cells
+    d3.select(svg).selectAll("rect")
+      .data(gridData)
+      .enter()
+      .append("rect")
+      .attr("x", d => d.x)
+      .attr("y", d => d.y)
+      .attr("width", gridSize - 1)
+      .attr("height", gridSize - 1)
+      .attr("fill", d => d.type === 'sea' ? '#4a90e2' : '#509007ff')
+      .attr("stroke-width", 1)
+  }
+  
+  return <svg ref={svg => svg && createGrid(svg)}></svg>
+}
+
+<Grid0 />
+Next, we 
