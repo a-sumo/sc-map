@@ -2,10 +2,6 @@
 
 Work In Progress
 
-<p style="text-align:center;">By humans, for humans.</p>
-
-All work on this repository was created by humans, not by AI.
-
 ## References
 
 - [Generating fantasy maps - Martin O'Leary](https://web.archive.org/web/20240201005356/https://mewo2.com/notes/terrain/)
