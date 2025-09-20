@@ -1,7 +1,6 @@
 // src/App.jsx
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import ResearchNotes from './research-notes.mdx'
-import GridMap from './grid-map.mdx'
+import DocsLayout from './components/ProcessLayout'
 
 function MainApp() {
   return (
@@ -17,24 +16,19 @@ function App() {
       <nav style={{ 
         padding: '20px', 
         borderBottom: '1px solid #ddd',
-        background: '#f8f9fa'
+        background: '#fff'
       }}>
-        <Link to="/" style={{ marginRight: '20px' }}>App</Link>
-        <Link to="/docs">Documentation</Link>
+        <Link to="/" style={{ marginRight: '20px', textDecoration: 'none' }}>
+          App
+        </Link>
+        <Link to="/process" style={{ textDecoration: 'none' }}>
+          Process
+        </Link>
       </nav>
       
       <Routes>
         <Route path="/" element={<MainApp />} />
-        <Route path="/docs" element={
-          <div style={{ 
-            maxWidth: '900px', 
-            margin: '0 auto', 
-            padding: '40px 20px',
-            lineHeight: '1.6'
-          }}>
-            <ResearchNotes />
-          </div>
-        } />
+        <Route path="/process" element={<DocsLayout />} />
       </Routes>
     </BrowserRouter>
   )
