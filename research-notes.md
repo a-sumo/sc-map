@@ -1,10 +1,6 @@
 # Research notes
 
-The Sutta Pittaka tree is an array of dictionaries stored in JSON format.
-
-This JSON file has been borrowed from Bikkhu Cittadhammo's excellent [DhammaCharts on the Sutta Pittaka](https://observablehq.com/embed/ed215448fbc203b6).
-
-It has the following structure:
+We begin with the [Sutta Pittaka tree](https://observablehq.com/embed/ed215448fbc203b6). It is an array of dictionaries stored in JSON format with the following structure:
 ```
 [
 	{
@@ -16,9 +12,10 @@ It has the following structure:
 	},
 ]
 ```
-The suttas can be found in terminal branches, or leaves. These are branches whose `id` field occurs in no other branches' `parentId` field.
+The suttas can be found at terminal branches, or leaves. Leaves are branches whose `id` field occurs in no other branches' `parentId` field.
 
-Because the `id` is unique, we can match each leaf to a single corresponding JSON file in the bilara-data sub-directory of the [sc-data repository](https://github.com/suttacentral/sc-data).
+Because the `id` is unique, we can match each leaf to a unique JSON file in the bilara-data sub-directory of the [sc-data repository](https://github.com/suttacentral/sc-data).
+
 Theses sutta files are in JSON format with the following structure:
 ```
 {
@@ -68,13 +65,16 @@ We will settle with 5 levels, namely:
 ```
 Each Sutta tree branch, leaves included, will have a category in this geographical hierarchy assigned to it based on its text length. 
 
-For example, the rule:
+Below is an example of allocation rules and their resulting structure:
+
+Rules:
+
 - continent: 1000 -  700 characters
 - region:  699 - 500 characters
 - city: 499 - 300 character
-- small town: 299 - 0 characters
+- small town: 299 - 0 characters,
 
-Would result in this structure
+Structure:
 ```
 A1 (1000, continent)
 ├── B1 (600, region)
@@ -85,13 +85,17 @@ A1 (1000, continent)
 │   ├── C4 (100, small town)
 ```
 
-References:
+
+
+### References:
+
 Suttas:
 
-- [Sutta Central - Ajahn Sujato (core contributor)](https://suttacentral.net)
+- [Sutta Central](https://suttacentral.net)
 
 Charts:
-- [Dhamma Charts - Bikkhu Cittadhammo](https://www.dhammacharts.org/)
+- [Dhamma Charts - Bikkhu Cittadhammo (excellent work)](https://www.dhammacharts.org/)
 
 Cartography:
+
 - https://meta.wikimedia.org/wiki/Wikivoyage/Geographical_hierarchy
